@@ -7,6 +7,7 @@ import '../controllers/book_controller.dart';
 
 class BookView extends GetView<BookController> {
   const BookView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,8 +16,9 @@ class BookView extends GetView<BookController> {
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: ()=> Get.toNamed(Routes.ADD_BOOK),
-          child: Icon(Icons.add),
+        onPressed: () => Get.toNamed(Routes.ADD_BOOK),
+        child: Icon(Icons.add),
+      ),
       body: const Center(
         child: Text(
           'BookView is working',
