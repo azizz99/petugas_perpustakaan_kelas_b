@@ -24,7 +24,7 @@ class LoginView extends GetView<LoginController> {
                 controller: controller.usernameController,
                 decoration: InputDecoration(hintText: "Masukan Username"),
                 validator: (value) {
-                  if (value!.length > 5) {
+                  if (value!.length < 5) {
                     return "username tidak boleh kosong";
                   }
                   return null;
@@ -34,7 +34,7 @@ class LoginView extends GetView<LoginController> {
                 controller: controller.passwordController,
                 decoration: InputDecoration(hintText: "Masukan Password"),
                 validator: (value) {
-                  if (value!.length > 5) {
+                  if (value!.length < 5) {
                     return "password tidak boleh kosong";
                   }
                   return null;
@@ -44,7 +44,7 @@ class LoginView extends GetView<LoginController> {
                   ? CircularProgressIndicator()
                   : ElevatedButton(
                       onPressed: () {
-                        controller.loading();
+                        controller.login();
                       },
                       child: Text("Login")))
             ],

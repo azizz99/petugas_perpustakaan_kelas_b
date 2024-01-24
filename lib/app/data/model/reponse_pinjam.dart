@@ -4,9 +4,9 @@
 
 class ReponsePinjam {
   ReponsePinjam({
-      this.status, 
-      this.message, 
-      this.data,});
+    this.status,
+    this.message,
+    this.data,});
 
   ReponsePinjam.fromJson(dynamic json) {
     status = json['status'];
@@ -14,13 +14,13 @@ class ReponsePinjam {
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data?.add(Data.fromJson(v));
+        data?.add(DataPinjam.fromJson(v));
       });
     }
   }
   int? status;
   String? message;
-  List<Data>? data;
+  List<DataPinjam>? data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -45,20 +45,20 @@ class ReponsePinjam {
 /// user : {"id":2,"username":"said","nama":"said","telp":"085","alamat":"alamat","role":"PEMINJAM","created_at":"2024-01-09T05:36:44.000000Z","updated_at":"2024-01-09T05:36:44.000000Z"}
 /// book : {"id":1,"kategori_id":1,"judul":"Belajar mengenal angka","penulis":"kusnaidi","penerbit":"PT alangka","tahun_terbit":2024,"created_at":"2024-01-09T05:43:09.000000Z","updated_at":"2024-01-09T05:43:09.000000Z"}
 
-class Data {
-  Data({
-      this.id, 
-      this.userId, 
-      this.bookId, 
-      this.tanggalPinjam, 
-      this.tanggalKembali, 
-      this.status, 
-      this.createdAt, 
-      this.updatedAt, 
-      this.user, 
-      this.book,});
+class DataPinjam {
+  DataPinjam({
+    this.id,
+    this.userId,
+    this.bookId,
+    this.tanggalPinjam,
+    this.tanggalKembali,
+    this.status,
+    this.createdAt,
+    this.updatedAt,
+    this.user,
+    this.book,});
 
-  Data.fromJson(dynamic json) {
+  DataPinjam.fromJson(dynamic json) {
     id = json['id'];
     userId = json['user_id'];
     bookId = json['book_id'];
@@ -113,14 +113,14 @@ class Data {
 
 class Book {
   Book({
-      this.id, 
-      this.kategoriId, 
-      this.judul, 
-      this.penulis, 
-      this.penerbit, 
-      this.tahunTerbit, 
-      this.createdAt, 
-      this.updatedAt,});
+    this.id,
+    this.kategoriId,
+    this.judul,
+    this.penulis,
+    this.penerbit,
+    this.tahunTerbit,
+    this.createdAt,
+    this.updatedAt,});
 
   Book.fromJson(dynamic json) {
     id = json['id'];
@@ -167,14 +167,14 @@ class Book {
 
 class User {
   User({
-      this.id, 
-      this.username, 
-      this.nama, 
-      this.telp, 
-      this.alamat, 
-      this.role, 
-      this.createdAt, 
-      this.updatedAt,});
+    this.id,
+    this.username,
+    this.nama,
+    this.telp,
+    this.alamat,
+    this.role,
+    this.createdAt,
+    this.updatedAt,});
 
   User.fromJson(dynamic json) {
     id = json['id'];

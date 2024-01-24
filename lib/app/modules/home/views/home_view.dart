@@ -10,19 +10,23 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomeView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-          ElevatedButton(onPressed: (){Get.toNamed(Routes.BOOK);}, child: Text("Buku")),
-          ElevatedButton(onPressed: (){Get.toNamed(Routes.PEMINJAMAN);}, child: Text("Peminjaman")),
-      ],
+        appBar: AppBar(
+          title: const Text('Home'),
+          centerTitle: true,
         ),
-      ),
+        body: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+
+                  ElevatedButton(
+                      onPressed: (){Get.toNamed(Routes.BOOK);}, child: const Text("Buku")),
+                  ElevatedButton(onPressed: (){Get.toNamed(Routes.PEMINJAMAN);}, child: const Text('Peminjaman')),
+                ],
+              ),
+            )
+        )
     );
   }
 }
-
